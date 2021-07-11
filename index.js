@@ -2,9 +2,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('./Manager');
-const Enginerr = require('./Engineer');
+const Engineer = require('./Engineer');
 const Intern = require('./Intern');
-const Enginer = require('./Engineer');
+const Employee = require('./Employee')
+const path = require('path')
 
 const team = [];
 
@@ -77,7 +78,7 @@ function questions() {
                 },
             ])
               .then(function(answers){
-                  var engineer = new Enginer(answers.name, answers.id, answers.email, answers.github);
+                  var engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
                   team.push(engineer)
                   nextMember()
             })
